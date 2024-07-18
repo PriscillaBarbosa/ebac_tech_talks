@@ -1,0 +1,55 @@
+.hero {
+    padding-top: 64px;
+    padding-bottom: 64px;
+    background-image: url(../images/fundo.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative; //adicionado para que o elemento abaixo funcione
+
+    .container {
+        position: relative; //posiciona o elemento abaixo de forma que o texto fique por cima
+    }
+
+    //criar elemento para deixar a imagem mais apagada e dar destaque ao texto
+    &::before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #000; //tentar esse efeito no hero do exercicio módulo 21
+        content: '';
+        opacity: 0.7;
+    }
+
+    &__text {
+        margin-top: 64px;
+        margin-bottom: 64px;
+        font-size: 40px;
+        line-height: 56px;
+        font-weight: 800;
+        text-align: center;
+
+    }
+
+    &__logo {
+        display: block; //para que o margin possa centralizar a logo
+        margin: 0 auto; //para centralizar a logo
+        height: 80px;
+    }
+
+    //resposividade celular
+    @media (max-width: 640px) {
+        padding: 40px 0;
+
+        &__logo {
+            height: 40px;
+        }
+
+        &__text {
+            font-size: 22px;
+            line-height: 24px;
+            margin: 24px 0;
+        }
+    }
+}

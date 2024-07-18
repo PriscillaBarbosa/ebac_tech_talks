@@ -1,3 +1,25 @@
-body {
-    background-color: red;
+@use 'hero';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Roboto, sans-serif;
+    color: #fff;
+}
+
+.container {
+    max-width: 960px; //largura máxima do container com as informações
+    width: 100%;
+    margin: 0 auto;  //para centralizar
+
+    //resposividade para cel
+    @media (max-width: 640px) {
+        max-width: 80%;   //largura máxima na tela
+    }
+
+    //resposividade para tablet
+    @media (max-width: 1024px) {
+        max-width: 90%;  //largura máxima na tela
+    }
 }
